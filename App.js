@@ -1,36 +1,21 @@
-import { Text, SafeAreaView, StyleSheet } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, StyleSheet, Button} from 'react-native';
 
-// You can import supported modules from npm
-import { Card } from 'react-native-paper';
+const ExemploUseEffect = () => {
+  const[contador,setContador] = useState(0);
+  const[mensagem,setMensagem] = useState("Componente montado")
 
-// or any files within the Snack
-import AssetExample from './components/AssetExample';
-
-export default function App() {
+  useEffect(() => {
+    setMensagem(`'O contador foi alterado para' ${contador}`);
+  }, [contador]);
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.paragraph}>
-        Change code in the editor and watch it change on your phone! Save to get a shareable url.
-      </Text>
-      <Card>
-        <AssetExample />
-      </Card>
-    </SafeAreaView>
+    <View>
+      <Text>{mensagem}</Text>
+      <Text>Contador: {contador}</Text>
+      <Button title="Incrementar" onPress={() => setContador(contador+1)}/>
+    </View>
   );
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column' //row
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
+export default ExemploUseEffect;
