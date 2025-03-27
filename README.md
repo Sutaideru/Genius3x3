@@ -19,3 +19,13 @@ const styles = StyleSheet.create({
 
 #Fazer botão sem botão
 <TouchableOpacity key(num) style=(styles.//algo)  onPress {()} => handlePress(num)>
+
+Amarelo
+laranja
+vermelho
+rosa
+roxo
+azul claro
+azul escuro
+verde claro
+verde escuro
