@@ -30,99 +30,78 @@ azul escuro
 verde claro
 verde escuro
 
-#Jogo Gênios 3x3
-O Jogo Gênios é uma implementação do clássico jogo de memorização, onde o jogador deve repetir uma sequência de luzes gerada aleatoriamente. Conforme o jogador acerta, a sequência aumenta de dificuldade.
+# Jogo Gênios (Simon Game)
 
-🚀 Começando
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
-Consulte a seção Implantação para saber como implantar o projeto.
+Este é um jogo de memória estilo "Gênios" (também conhecido como "Simon" ou "Genius") desenvolvido com React Native como parte de um trabalho de Desenvolvimento Mobile.
 
-📋 Pré-requisitos
+## Funcionalidades
 
-Node.js: É necessário para rodar o React Native.
-Instale o Node.js através de https://nodejs.org.
+- Jogo de memória com 9 quadrados coloridos em grade 3x3
+- Três níveis de dificuldade:
+  - **Fácil**: Sequência inicial com 2 passos, velocidade mais lenta
+  - **Médio**: Sequência inicial com 3 passos, velocidade média
+  - **Difícil**: Sequência inicial com 4 passos, velocidade mais rápida
+- Sistema de pontuação baseado no nível atual e tamanho da sequência
+- Interface simples e intuitiva
 
-React Native CLI: Para rodar o projeto no seu dispositivo.
-Instale o React Native CLI com o comando:
+## Como Jogar
 
-sh
-Copiar
-Editar
-npm install -g react-native-cli
-Android Studio ou Xcode: Para emular o aplicativo no Android ou iOS, respectivamente.
+1. Selecione um nível de dificuldade na tela inicial
+2. Observe a sequência de quadrados que irão piscar
+3. Repita a sequência tocando nos quadrados na mesma ordem
+4. Se acertar, a sequência aumentará em um passo
+5. Se errar, o jogo termina e exibe sua pontuação final
 
-🔧 Instalação
-Siga os passos abaixo para configurar o ambiente de desenvolvimento na sua máquina:
+## Implementação Técnica
 
-Clone este repositório:
+### Estrutura do Código
 
-sh
-Copiar
-Editar
-git clone https://github.com/seu-usuario/jogo-genios.git
-Navegue até a pasta do projeto:
+O jogo foi desenvolvido com React Native, utilizando hooks como `useState` e `useEffect` para gerenciar o estado do jogo e os efeitos colaterais.
 
-sh
-Copiar
-Editar
-cd jogo-genios
-Instale as dependências do projeto:
+### Principais Componentes
 
-sh
-Copiar
-Editar
-npm install
-Execute o aplicativo:
+- **App.js**: Componente principal que contém toda a lógica do jogo
+- **Hooks utilizados**:
+  - `useState`: Para gerenciar diversos estados do jogo (sequência, nível, pontuação, etc.)
+  - `useEffect`: Para controlar efeitos colaterais e sincronização
 
-Para Android:
+### Estados Principais
 
-sh
-Copiar
-Editar
-npx react-native run-android
-Para iOS (necessário macOS):
+- `sequence`: Array com a sequência atual de quadrados a serem clicados
+- `userSequence`: Array com a sequência inserida pelo usuário
+- `isPlaying`: Booleano que indica se o jogo está mostrando a sequência
+- `level`: Número inteiro que representa o nível atual
+- `difficulty`: String que representa a dificuldade selecionada
+- `score`: Número que representa a pontuação atual
+- `flashingSquare`: Controla qual quadrado está piscando no momento
 
-sh
-Copiar
-Editar
-npx react-native run-ios
-⚙️ Executando os testes
-Para executar os testes automatizados, use os seguintes comandos:
+### Funções Principais
 
-sh
-Copiar
-Editar
-npm test
-Isso executará os testes de unidade e integração do projeto.
+- `startGame`: Inicia um novo jogo com a dificuldade selecionada
+- `generateSequence`: Cria uma nova sequência aleatória de passos
+- `playSequence`: Reproduz visualmente a sequência para o jogador
+- `handleSquarePress`: Gerencia o toque do usuário em um quadrado
 
-🔩 Analisando os testes de ponta a ponta
-Os testes de ponta a ponta verificam o comportamento geral do jogo, como a geração de sequências e a interação do jogador com a interface. Eles garantem que o fluxo do jogo ocorra sem problemas e que o usuário consiga realizar as ações esperadas.
+## Como Executar o Projeto
 
-⌨️ Testes de estilo de codificação
-Os testes de estilo de codificação verificam se o código segue as convenções estabelecidas, como indentação correta, uso de hooks e práticas recomendadas para React Native.
+1. Certifique-se de ter o Node.js e npm instalados
+2. Instale o Expo CLI: `npm install -g expo-cli`
+3. Clone este repositório
+4. Navegue até a pasta do projeto e execute `npm install`
+5. Execute `expo start` ou `npm start`
+6. Use o aplicativo Expo Go no seu dispositivo móvel para escanear o QR Code ou execute em um emulador
 
-📦 Implantação
-Para implantar o projeto em um ambiente de produção, basta seguir as instruções de publicação do React Native para Android e iOS.
+## Possíveis Melhorias
 
-🛠️ Construído com
+- Adicionar efeitos sonoros para cada quadrado
+- Implementar sistema de recordes (high scores)
+- Adicionar animações mais elaboradas
+- Criar modo de jogo infinito
+- Adicionar cronômetro para tempo de resposta
 
-React Native: Framework utilizado para o desenvolvimento do aplicativo.
+## Tecnologias Utilizadas
 
-Node.js: Ambiente de execução utilizado.
-
-React: Biblioteca para construção de interfaces de usuário.
-
-🖇️ Colaborando
-Por favor, leia o arquivo COLABORACAO.md para obter detalhes sobre o nosso código de conduta e o processo para enviar solicitações de pull requests.
-
-📌 Versão
-Usamos SemVer para controle de versão. Para as versões disponíveis, observe as tags neste repositório.
-
-✒️ Autores
-
-Seu Nome - Trabalho Inicial - seu-usuario
-
-Fulano De Tal - Documentação - fulanodetal
-Você também pode ver a lista de todos os colaboradores que participaram deste projeto.
-
-
+- React Native
+- JavaScript (ES6+)
+- React Hooks (useState, useEffect)
+- Expo
