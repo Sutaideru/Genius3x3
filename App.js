@@ -3,15 +3,7 @@
 
 // App.js com efeitos sonoros e dificuldade dinâmica
 import React, { useState, useEffect } from 'react';
-import { 
-  View, 
-  Text, 
-  TouchableOpacity, 
-  StyleSheet, 
-  Alert,
-  SafeAreaView,
-  StatusBar
-} from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert, SafeAreaView, StatusBar } from 'react-native';
 import { Audio } from 'expo-av'; // Importando o módulo de áudio
 
 const App = () => {
@@ -244,7 +236,7 @@ const App = () => {
       playCorrectSound();
       
       // Atualizar pontuação
-      const newScore = score + (level * sequence.length);
+      const newScore = score + 1;
       setScore(newScore);
       
       // Avançar para o próximo nível
