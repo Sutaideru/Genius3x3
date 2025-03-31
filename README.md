@@ -1,4 +1,4 @@
-# Jogo Gênius 3x3
+# Jogo Genius 3x3
 
 Este projeto envolve a criação de um jogo estilo *Genius*, mas com uma grid 3x3 ao invés de 2x2. O jogo possui 3 níveis de dificuldade: fácil, médio e difícil. O jogador deve repetir a sequência de luzes gerada aleatoriamente, e a dificuldade aumenta conforme o progresso no jogo.
 
@@ -68,14 +68,13 @@ cd JogoDaMemoriaReact
 ```
 npm install
 ```
-Inicie o projeto:
+6.Inicie o projeto:
 ```
 expo start
 ```
-
-5. Navegue até a pasta do projeto e execute `npm install`
-6. Execute `expo start` ou `npm start`
-7. Use o aplicativo Expo Go no seu dispositivo móvel para escanear o QR Code ou execute em um emulador
+7. Navegue até a pasta do projeto e execute `npm install`
+8. Execute `expo start` ou `npm start`
+9. Use o aplicativo Expo Go no seu dispositivo móvel para escanear o QR Code ou execute em um emulador
 
 ## Tecnologias Utilizadas
 
