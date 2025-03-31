@@ -54,21 +54,21 @@ O jogo foi desenvolvido com React Native, utilizando hooks como `useState` e `us
 1. Certifique-se de ter o Node.js e npm instalados
 2. Instale o Expo CLI: `npm install -g expo-cli`
 3. Clone este repositório
-´´´
+```
 git clone https://github.com/Sutaideru/JogoDaMemoriaReact.git
-´´´
+```
 deex mnuts
-´´´
+```
 cd JogoDaMemoriaReact
-´´´
+```
 deex mnuts
-´´´
+```
 npm install
 
-´´´
-´´´
+```
+```
 expo start
-´´´
+```
 
 5. Navegue até a pasta do projeto e execute `npm install`
 6. Execute `expo start` ou `npm start`
