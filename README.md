@@ -59,14 +59,6 @@ O jogo foi desenvolvido com React Native, utilizando hooks como `useState` e `us
 5. Execute `expo start` ou `npm start`
 6. Use o aplicativo Expo Go no seu dispositivo móvel para escanear o QR Code ou execute em um emulador
 
-## Possíveis Melhorias
-
-- Adicionar efeitos sonoros para cada quadrado
-- Implementar sistema de recordes (high scores)
-- Adicionar animações mais elaboradas
-- Criar modo de jogo infinito
-- Adicionar cronômetro para tempo de resposta
-
 ## Tecnologias Utilizadas
 
 - React Native
