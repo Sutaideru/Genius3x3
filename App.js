@@ -37,17 +37,8 @@ const App = () => {
   };
 
   // Cores dos quadrados
-  const colors = [
-    '#FF0000', // Vermelho
-    '#00FF00', // Verde
-    '#0000FF', // Azul
-    '#FFFF00', // Amarelo
-    '#FF00FF', // Magenta
-    '#00FFFF', // Ciano
-    '#FFA500', // Laranja
-    '#800080', // Roxo
-    '#008000', // Verde escuro
-  ];
+  const colors = ['#FF0000','#00FF00','#0000FF','#FFFF00','#FF00FF','#00FFFF','#FFA500','#800080','#008000', ];
+                 //Vermelho,  Verde,    Azul,    Amarelo,  Magenta,   Ciano,   Laranja,   Roxo,   Verde escuro
   
   // Estado para controlar quais quadrados estão piscando
   const [flashingSquare, setFlashingSquare] = useState(-1);
