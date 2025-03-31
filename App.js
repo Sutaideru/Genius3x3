@@ -287,12 +287,12 @@ const App = () => {
         </View>
       )}
       
-      <Text style={styles.title}>Jogo Gênios</Text>
+      <Text style={styles.title}>Jogo Genius</Text>
       
       {gameStarted ? (
         <>
           <View style={styles.infoContainer}>
-            <Text style={styles.info}>Nível: {level}</Text>
+            <Text style={styles.info}>Sequência: {level}</Text>
             <Text style={styles.info}>Pontuação: {score}</Text>
           </View>
           
@@ -319,9 +319,9 @@ const App = () => {
           <Text style={styles.menuText}>Regras:</Text>
           <Text style={styles.rulesText}>
             - O jogo começa no nível Fácil{'\n'}
-            - Níveis 1-5: Dificuldade Fácil{'\n'}
-            - Níveis 6-15: Dificuldade Média{'\n'}
-            - Níveis 16+: Dificuldade Difícil{'\n'}
+            - Sequência 1-5: Dificuldade Fácil{'\n'}
+            - Sequência 6-15: Dificuldade Média{'\n'}
+            - Sequência 16+: Dificuldade Difícil{'\n'}
             - Memorize a sequência e repita-a!
           </Text>
           
