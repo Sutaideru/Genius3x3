@@ -1,6 +1,6 @@
-# Jogo Gênios (Simon Game)
+# Jogo Gênius 3x3
 
-Este é um jogo de memória estilo "Gênios" (também conhecido como "Simon" ou "Genius") desenvolvido com React Native como parte de um trabalho de Desenvolvimento Mobile.
+Este projeto envolve a criação de um jogo estilo *Genius*, mas com uma grid 3x3 ao invés de 2x2. O jogo possui 3 níveis de dificuldade: fácil, médio e difícil. O jogador deve repetir a sequência de luzes gerada aleatoriamente, e a dificuldade aumenta conforme o progresso no jogo.
 
 ## Funcionalidades
 
