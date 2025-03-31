@@ -257,7 +257,7 @@ const App = () => {
         key={index}
         style={[
           styles.square,
-          { backgroundColor: isFlashing ? colors[index] : colors[index] + '70' }
+          { backgroundColor: isFlashing ? '#FFFFFF' : colors[index]}
         ]}
         onPress={() => handleSquarePress(index)}
         disabled={isPlaying}
