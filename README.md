@@ -14,10 +14,10 @@ Este projeto envolve a criação de um jogo estilo *Genius*, mas com uma grid 3x
 
 ## Como Jogar
 
-1. 2
-2. 3
-3. 4
-4. 5
+1. Leia as regras e clique em "Iniciar Jogo";
+2. Após a sequência ser exibida, toque nos quadrados na mesma ordem em que piscaram;
+3. Se acertar toda a sequência corretamente, um novo passo será adicionado e o jogo continuará;
+4. Se errar a ordem, o jogo exibe uma mensagem de erro e o nível reinicia.
 
 ## Implementação Técnica
 
