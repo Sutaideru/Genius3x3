@@ -6,11 +6,10 @@ Este projeto envolve a criação de um jogo estilo *Genius*, mas com uma grid 3x
 
 - Jogo de memória com 9 quadrados coloridos em grade 3x3
 - Três níveis de dificuldade:
-  - **Fácil**: Sequência inicial com 2 passos, velocidade mais lenta
-  - **Médio**: Sequência inicial com 3 passos, velocidade média
-  - **Difícil**: Sequência inicial com 4 passos, velocidade mais rápida
-- Sistema de pontuação baseado no nível atual e tamanho da sequência
-- Interface simples e intuitiva
+  - **Fácil**: Botões piscam por 0.8 segundos e tem um intervalo de 0.3 segundos até que o próximo pisque
+  - **Médio**: Botões piscam por 0.6 segundos e tem um intervalo de 0.25 segundos até que o próximo pisque
+  - **Difícil**: Botões piscam por 0.4 segundos e tem um intervalo de 0.2 segundos até que o próximo pisque
+- Sistema de pontuação baseado na quantidade de sequências vencidas
 
 ## Como Jogar
 
