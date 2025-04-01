@@ -1,13 +1,10 @@
-// Para adicionar efeitos sonoros, primeiro você precisa instalar a biblioteca expo-av:
-// npm install expo-av
 
-// App.js com efeitos sonoros e dificuldade dinâmica
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert, SafeAreaView, StatusBar } from 'react-native';
 import { Audio } from 'expo-av'; // Importando o módulo de áudio
 
 const App = () => {
-  // Estados do jogo
+
   const [sequence, setSequence] = useState([]); 
   const [userSequence, setUserSequence] = useState([]); 
   const [isPlaying, setIsPlaying] = useState(false); 
@@ -17,7 +14,7 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [sounds, setSounds] = useState([]); // Para armazenar os sons
   
-  // Configurações de dificuldade
+
   const difficultySettings = {
     easy: { 
       initialSteps: 2, 
