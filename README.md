@@ -57,7 +57,7 @@ npm install -g expo-cli
 ```
 3. Clone este repositório:
 ```
-git clone https://github.com/Sutaideru/JogoDaMemoriaReact.git
+git clone https://github.com/Sutaideru/Genius3x3.git
 ```
 4. Acesse a pasta do projeto:
 ```
