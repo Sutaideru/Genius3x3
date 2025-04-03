@@ -17,17 +17,14 @@ const App = () => {
 
   const difficultySettings = {
     easy: { 
-      initialSteps: 2, 
       flashDuration: 800, 
       pauseDuration: 300 
     },
     medium: { 
-      initialSteps: 3, 
       flashDuration: 600, 
       pauseDuration: 250 
     },
     hard: { 
-      initialSteps: 4, 
       flashDuration: 400, 
       pauseDuration: 200 
     }
