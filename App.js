@@ -16,17 +16,14 @@ const App = () => {
 
   const difficultySettings = {
     easy: { 
-      initialSteps: 2, 
       flashDuration: 800, 
       pauseDuration: 300 
     },
     medium: { 
-      initialSteps: 3, 
       flashDuration: 600, 
       pauseDuration: 250 
     },
     hard: { 
-      initialSteps: 4, 
       flashDuration: 400, 
       pauseDuration: 200 
     }
@@ -43,7 +40,7 @@ const App = () => {
   useEffect(() => {
     if (level <= 5) {
       setDifficulty('easy');
-    } else if (level <= 15) {
+    } else if (level <= 10) {
       setDifficulty('medium');
     } else {
       setDifficulty('hard');
@@ -149,7 +146,9 @@ const App = () => {
     setScore(0);
     setDifficulty('easy'); // Sempre começa no fácil
     setGameStarted(true);
-    generateSequence(difficultySettings.easy.initialSteps);
+    
+    // Início com 2 passos (valor que estava em initialSteps para 'easy')
+    generateSequence(2);
   };
 
   // Gerar uma nova sequência
@@ -314,11 +313,10 @@ const App = () => {
         <View style={styles.menuContainer}>
           <Text style={styles.menuText}>Regras:</Text>
           <Text style={styles.rulesText}>
-            - O jogo começa no nível Fácil{'\n'}
-            - Sequência 1-5: Dificuldade Fácil{'\n'}
-            - Sequência 6-15: Dificuldade Média{'\n'}
-            - Sequência 16+: Dificuldade Difícil{'\n'}
-            - Memorize a sequência e repita-a!
+            Memorize a sequência e repita-a!{'\n'}
+            - Sequência 1-5: Fácil{'\n'}
+            - Sequência 6-10: Média{'\n'}
+            - Sequência 11+: Difícil
           </Text>
           
           <TouchableOpacity 
