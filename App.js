@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert, SafeAreaView, StatusBar } from 'react-native';
 import { Audio } from 'expo-av'; // Importando o módulo de áudio
@@ -17,14 +16,17 @@ const App = () => {
 
   const difficultySettings = {
     easy: { 
+      initialSteps: 2, 
       flashDuration: 800, 
       pauseDuration: 300 
     },
     medium: { 
+      initialSteps: 3, 
       flashDuration: 600, 
       pauseDuration: 250 
     },
     hard: { 
+      initialSteps: 4, 
       flashDuration: 400, 
       pauseDuration: 200 
     }
