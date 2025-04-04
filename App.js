@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert, SafeAreaView, StatusBar } from 'react-native';
-import { Audio } from 'expo-av'; // Importando o módulo de áudio
+import { Audio } from 'expo-av'; 
 
 const App = () => {
 
@@ -11,7 +11,7 @@ const App = () => {
   const [level, setLevel] = useState(1); 
   const [difficulty, setDifficulty] = useState('easy'); 
   const [score, setScore] = useState(0);
-  const [sounds, setSounds] = useState([]); // Para armazenar os sons
+  const [sounds, setSounds] = useState([]);
   
 
   const difficultySettings = {
@@ -36,7 +36,6 @@ const App = () => {
   // Estado para controlar quais quadrados estão piscando
   const [flashingSquare, setFlashingSquare] = useState(-1);
   
-  // Atualizando a dificuldade com base no nível
   useEffect(() => {
     if (level <= 5) {
       setDifficulty('easy');
@@ -60,19 +59,11 @@ const App = () => {
   // Função para carregar os sons
   const loadSounds = async () => {
     try {
-      // Configurar áudio
-      await Audio.setAudioModeAsync({
-        playsInSilentModeIOS: true,
-        shouldDuckAndroid: true,
-        playThroughEarpieceAndroid: false,
-      });
       
       const soundObjects = [];
       
       // Carregar sons para cada quadrado (você vai precisar ter esses arquivos)
       for (let i = 0; i < 9; i++) {
-        // Nota: você precisa ter um arquivo tone.mp3 na pasta assets/sounds
-        // tone.mp3 é um som simples usado para cada quadrado
         const { sound } = await Audio.Sound.createAsync(
           require('./assets/sounds/tone.mp3'),
           { volume: 1.0 }
@@ -147,8 +138,7 @@ const App = () => {
     setDifficulty('easy'); // Sempre começa no fácil
     setGameStarted(true);
     
-    // Início com 2 passos (valor que estava em initialSteps para 'easy')
-    generateSequence(2);
+    generateSequence(1);
   };
 
   // Gerar uma nova sequência
