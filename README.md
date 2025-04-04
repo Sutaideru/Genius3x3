@@ -24,13 +24,6 @@ Este projeto envolve a criação de um jogo estilo *Genius*, mas com uma grid 3x
 
 O jogo foi desenvolvido com React Native, utilizando hooks como `useState` e `useEffect` para gerenciar o estado do jogo e os efeitos colaterais.
 
-### Principais Componentes
-
-- **App.js**: Componente principal que contém toda a lógica do jogo
-- **Hooks utilizados**:
-  - `useState`: Para gerenciar diversos estados do jogo (sequência, nível, pontuação, etc.)
-  - `useEffect`: Para controlar efeitos colaterais e sincronização
-
 ### Estados Principais
 
 - `sequence`: Array com a sequência atual de quadrados a serem clicados
@@ -78,6 +71,6 @@ expo start
 ## Tecnologias Utilizadas
 
 - React Native
-- JavaScript (ES6+)
+- JavaScript
 - React Hooks (useState, useEffect)
 - Expo
