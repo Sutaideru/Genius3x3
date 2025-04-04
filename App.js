@@ -29,11 +29,10 @@ const App = () => {
     }
   };
 
-  // Cores dos quadrados
+
   const colors = ['#FF0000','#00FF00','#0000FF','#FFFF00','#FF00FF','#00FFFF','#FFA500','#800080','#008000', ];
                  //Vermelho,  Verde,    Azul,    Amarelo,  Magenta,   Ciano,   Laranja,   Roxo,   Verde escuro
   
-  // Estado para controlar quais quadrados estão piscando
   const [flashingSquare, setFlashingSquare] = useState(-1);
   
   useEffect(() => {
@@ -46,23 +45,19 @@ const App = () => {
     }
   }, [level]);
 
-  // Carregar os sons quando o componente montar
   useEffect(() => {
     loadSounds();
     
-    // Limpeza ao desmontar o componente
     return () => {
       unloadSounds();
     };
   }, []);
 
-  // Função para carregar os sons
   const loadSounds = async () => {
     try {
       
       const soundObjects = [];
       
-      // Carregar sons para cada quadrado (você vai precisar ter esses arquivos)
       for (let i = 0; i < 9; i++) {
         const { sound } = await Audio.Sound.createAsync(
           require('./assets/sounds/tone.mp3'),
@@ -71,7 +66,6 @@ const App = () => {
         soundObjects.push(sound);
       }
       
-      // Sons para acerto e erro (você vai precisar ter esses arquivos)
       const { sound: correctSound } = await Audio.Sound.createAsync(
         require('./assets/sounds/correct.mp3')
       );
@@ -86,7 +80,6 @@ const App = () => {
     }
   };
   
-  // Descarregar os sons para liberar recursos
   const unloadSounds = async () => {
     try {
       for (const sound of sounds) {
@@ -99,7 +92,6 @@ const App = () => {
     }
   };
   
-  // Função para tocar um som específico
   const playSound = async (index) => {
     try {
       if (sounds[index]) {
@@ -110,7 +102,6 @@ const App = () => {
     }
   };
   
-  // Sons para acerto e erro
   const playCorrectSound = async () => {
     try {
       if (sounds[9]) {
@@ -131,17 +122,13 @@ const App = () => {
     }
   };
 
-  // Iniciar um novo jogo
   const startGame = () => {
     setLevel(1);
     setScore(0);
-    setDifficulty('easy'); // Sempre começa no fácil
     setGameStarted(true);
-    
     generateSequence(1);
   };
 
-  // Gerar uma nova sequência
   const generateSequence = (steps) => {
     const newSequence = [];
     for (let i = 0; i < steps; i++) {
@@ -150,52 +137,40 @@ const App = () => {
     setSequence(newSequence);
     setUserSequence([]);
     
-    // Iniciar a demonstração da sequência após um curto atraso
     setTimeout(() => {
       playSequence(newSequence);
     }, 1000);
   };
 
-  // Reproduzir a sequência para o jogador
   const playSequence = async (seq) => {
     setIsPlaying(true);
     
-    // Configurações baseadas na dificuldade atual
     const { flashDuration, pauseDuration } = difficultySettings[difficulty];
     
-    // Mostrar cada passo da sequência
     for (let i = 0; i < seq.length; i++) {
-      // Espera antes de piscar o próximo quadrado
       await new Promise(resolve => setTimeout(resolve, pauseDuration));
       
-      // Pisca o quadrado e toca o som
       setFlashingSquare(seq[i]);
       playSound(seq[i]);
       
-      // Espera a duração do piscar
       await new Promise(resolve => setTimeout(resolve, flashDuration));
       
-      // Desliga o piscar
       setFlashingSquare(-1);
     }
     
     setIsPlaying(false);
   };
 
-  // Lidar com o toque do usuário em um quadrado
   const handleSquarePress = (index) => {
     if (isPlaying || !gameStarted) return;
     
-    // Feedback visual e sonoro do toque
     setFlashingSquare(index);
     playSound(index);
     setTimeout(() => setFlashingSquare(-1), 200);
     
-    // Adicionar à sequência do usuário
     const newUserSequence = [...userSequence, index];
     setUserSequence(newUserSequence);
     
-    // Verificar se o usuário errou
     if (newUserSequence[newUserSequence.length - 1] !== sequence[newUserSequence.length - 1]) {
       playWrongSound();
       Alert.alert(
@@ -206,26 +181,20 @@ const App = () => {
       return;
     }
     
-    // Verificar se o usuário completou a sequência atual
     if (newUserSequence.length === sequence.length) {
-      // Tocar som de acerto
       playCorrectSound();
       
-      // Atualizar pontuação
       const newScore = score + 1;
       setScore(newScore);
       
-      // Avançar para o próximo nível
       const newLevel = level + 1;
       setLevel(newLevel);
       
-      // Adicionar um novo passo à sequência
       setTimeout(() => {
         const newSequence = [...sequence, Math.floor(Math.random() * 9)];
         setSequence(newSequence);
         setUserSequence([]);
         
-        // Mostrar a nova sequência
         setTimeout(() => {
           playSequence(newSequence);
         }, 1000);
@@ -233,7 +202,6 @@ const App = () => {
     }
   };
 
-  // Renderizar um quadrado do jogo
   const renderSquare = (index) => {
     const isFlashing = flashingSquare === index;
     
@@ -250,7 +218,6 @@ const App = () => {
     );
   };
   
-  // Obter o texto da dificuldade em português
   const getDifficultyText = () => {
     switch(difficulty) {
       case 'easy': return 'Fácil';
