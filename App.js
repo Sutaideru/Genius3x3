@@ -407,7 +407,7 @@ const styles = StyleSheet.create({
     left: 20,
     padding: 8,
     borderRadius: 5,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    backgroundColor: '#7d7d7d',
   },
   difficultyText: {
     color: '#FFFFFF',
